@@ -1,0 +1,51 @@
+.devise
+  = render "devise/shared/header"
+  .deviseSection
+    %h2 会員情報入力
+  .main-adress_contents
+    .main-adress_contents-form
+      = form_with url: :address_info_keep_index, local: true do |f|
+        .main-adress_contents-form_field
+          %p
+            お名前
+            %span.main-adress_contents-form_field_span-red 必須
+          = f.text_field :first_name, placeholder: "例) 山田", autofocus: true, maxlength: "6", class: "inputField"
+          = f.text_field :last_name, placeholder: "例) 花太郎", autofocus: true, maxlength: "6", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            お名前カナ
+            %span.main-adress_contents-form_field_span-red 必須
+          = f.text_field :kana_first_name, placeholder: "例）ヤマダ", class: "inputField"
+          = f.text_field :kana_last_name, placeholder: "例）ハナタロウ", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            郵便番号
+            %span.main-adress_contents-form_field_span-red 必須
+          = f.text_field :postal_code, placeholder: "例) 123-4567", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            都道府県
+            %span.main-adress_contents-form_field_span-red 必須
+          = f.text_field :prefectures, placeholder: "例）北海道", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            市町村
+            %span.main-adress_contents-form_field_span-red 必須
+          = f.text_field :city, placeholder: "例）大阪市", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            番地
+            %span.main-adress_contents-form_field_span-red 必須
+          = f.text_field :address, placeholder: "例）船橋市２−２３ー８", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            建物名
+            %span.main-adress_contents-form_field_span-gray 任意
+          = f.text_field :building, placeholder: "例）ユタカビル", class: "inputField"
+        .main-adress_contents-form_field
+          %p
+            電話
+            %span.main-adress_contents-form_field_span-gray 任意
+          = f.text_field :phonenumber, placeholder: "例）080-5344-0766", class: "inputField"
+          = f.submit "次へ進む", class: "main-adress_contents-form_field_submit"
+  = render "devise/shared/footer"
